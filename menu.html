@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Menu | Mr. Cook - Pakistan</title>
+  <meta name="description" content="Official menu for Mr. Cook in Pakistan. Exclusive Deals, Steaks, Pastas, Zinger Burgers, Pizzas, Shawarma & Paratha Rolls, Wings, Soups. Call: 03144108033." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'><path d='M18.06 22.99h-12.12c-1.6 0-2.92-1.28-2.94-2.88l-.48-11.45c-.02-.37.28-.66.65-.66h17.65c.37 0 .67.29.65.66l-.47 11.45c-.03 1.6-1.34 2.88-2.94 2.88zm-14.7-13.01l.43 10.15c.01.55.46.99 1.01.99h14.4c.55 0 1-.44 1.01-.99l.43-10.15H3.36zM12 2C8.69 2 6 4.69 6 8h12c0-3.31-2.69-6-6-6zm0 2c2.21 0 4 1.79 4 4H8c0-2.21 1.79-4 4-4z'/></svg>" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            charcoal: {
+              DEFAULT: '#1a1a1a',
+              deep: '#121212',
+              card: '#1b1b1b',
+              surface: '#242424',
+              border: '#2a2a2a'
+            },
+            amber: {
+              accent: '#d97706',
+              glow: '#f59e0b',
+              light: '#fbbf24',
+              flame: '#ea580c'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-amber': '0 0 25px -3px rgba(245, 158, 11, 0.45)',
+            'card-dark': '0 10px 30px -10px rgba(0, 0, 0, 0.7)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./brand-theme.js"></script>
+</head>
+<body class="bg-[#121212] text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen flex flex-col">
+
+  <!-- TOP BANNER -->
+  <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-orange-600 text-black text-xs sm:text-sm font-semibold py-1.5 px-4 text-center tracking-wide flex items-center justify-center gap-2 relative z-50 entry-banner">
+    <span class="inline-block animate-bounce">⚡</span>
+    <span>Free Delivery across Rawalpindi on orders above Rs. 1,500! For Assistance: <a href="tel:03144108033" class="underline font-bold hover:text-white transition-colors">03144108033</a></span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-white/5 transition-all entry-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo on the left (Click triggers Staff Login Selection Modal) -->
+      <a href="index.html" onclick="openLoginSelectionModal(event)" class="header-logo-trigger flex items-center gap-3 group cursor-pointer" title="Mr. Cook Portal Login">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-all flex items-center justify-center">
+          <div class="w-full h-full bg-[#1a1a1a] rounded-[14px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-amber-500 group-hover:text-amber-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+              <line x1="6" y1="17" x2="18" y2="17"/>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-heading font-black text-2xl tracking-tight text-white group-hover:text-amber-400 transition-colors">
+              Mr. Cook
+            </span>
+            <span class="inline-block w-2 h-2 rounded-full bg-amber-500"></span>
+          </div>
+          <!-- LOCATION TAG: Pakistan -->
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-500/90 -mt-1">
+            Pakistan
+          </span>
+        </div>
+      </a>
+
+      <!-- Center Back to Home Link -->
+      <div class="hidden md:flex items-center gap-2">
+        <a href="index.html" class="text-neutral-300 hover:text-amber-400 transition-colors flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-xl hover:bg-white/5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <!-- Right CTAs: Direct Phone (03144108033) & Cart Button (Standard Cart Icon & "Cart" text) -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Phone Link -->
+        <a href="tel:03144108033" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full bg-neutral-800 hover:bg-neutral-700 text-xs font-heading font-bold text-neutral-200 border border-white/10 hover:border-amber-500/50 transition-all">
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>For Assistance: 03144108033</span>
+        </a>
+
+        <!-- View Cart Button: Navigates directly to dedicated Cart page (cart.html) -->
+        <a href="cart.html" id="header-cart-btn" class="relative flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-heading font-black text-sm tracking-wide shadow-glow-amber transition-all duration-200 group">
+          <!-- Standard Shopping Cart Icon (Trolley with wheels) -->
+          <svg class="w-4 h-4 text-black group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Cart</span>
+          <span id="cart-badge" class="ml-1 px-2 py-0.5 text-xs font-black bg-black text-amber-400 rounded-full transition-all">0</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Horizontal Category Navigation Bar (Clean Text Labels, No Icons) -->
+    <div id="mobile-categories-bar" class="lg:hidden bg-[#181818] border-t border-white/5 px-4 py-2.5 overflow-x-auto flex gap-2 no-scrollbar">
+      <!-- Populated dynamically with clean text labels -->
+    </div>
+  </header>
+
+  <!-- PERSISTENT ORDER TRACKER BANNER (If active order exists) -->
+  <div id="persistent-order-container" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-0 w-full transition-all duration-300">
+    <div class="bg-gradient-to-r from-[#1c1c1c] via-[#222222] to-[#1c1c1c] border border-amber-500/40 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-lg shrink-0">
+          🛵
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-black text-white text-sm sm:text-base">Your Order Placed</span>
+            <span class="px-2 py-0.5 rounded-full text-[9px] font-heading font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 animate-pulse">LIVE TRACKER</span>
+          </div>
+          <p class="text-xs text-neutral-400">Order <strong id="menu-tracker-order-id" class="text-white font-mono">#MC-000000</strong> is being prepared in the kitchen</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/5">
+        <div class="bg-black/50 border border-amber-500/40 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs">
+          <span class="text-neutral-400">Est. Delivery:</span>
+          <span id="menu-tracker-countdown" class="font-heading font-black text-amber-400 font-mono">35:00</span>
+        </div>
+        <a href="cart.html" class="px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-heading font-bold transition-all shadow-glow-amber">
+          View Receipt ➔
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN MENU CONTAINER (SIDEBAR + COMPACT MAIN GRID) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+      
+      <!-- ============================================== -->
+      <!-- RESPONSIVE FIXED LEFT-SIDE SIDEBAR (CLEAN TEXT)-->
+      <!-- ============================================== -->
+      <aside class="hidden lg:block w-64 shrink-0 sticky top-28 space-y-5">
+        
+        <!-- Category Navigation Card -->
+        <div class="bg-[#1a1a1a] border border-white/10 rounded-3xl p-4 shadow-card-dark">
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-white/5">
+            <h2 class="font-heading font-black text-sm text-white tracking-wide uppercase">Menu Categories</h2>
+          </div>
+
+          <!-- Quick Search Filter -->
+          <div class="relative mb-3">
+            <input 
+              type="text" 
+              id="menu-search" 
+              oninput="handleMenuSearch(this.value)"
+              placeholder="Search our delicious menu..." 
+              class="w-full pl-8 pr-3 py-1.5 bg-[#222222] border border-white/10 rounded-xl text-xs text-white placeholder-neutral-400 focus:outline-none focus:border-amber-500 transition-colors"
+            />
+            <svg class="w-3.5 h-3.5 text-neutral-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+
+          <!-- Vertical Category Links: Clean Text Labels Only (No Icons) -->
+          <nav class="space-y-1 text-xs font-semibold max-h-[calc(100vh-21rem)] overflow-y-auto pr-1 no-scrollbar" id="sidebar-nav">
+            <!-- Dynamically populated with clean text labels -->
+          </nav>
+        </div>
+
+        <!-- Store Help Card -->
+        <div class="bg-gradient-to-br from-[#202020] to-[#181818] border border-amber-500/20 rounded-3xl p-4 text-xs text-neutral-400 space-y-2.5">
+          <div class="flex items-center gap-2 text-white font-heading font-bold text-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Delivery Available</span>
+          </div>
+          <p class="leading-relaxed text-[11px]">Direct WhatsApp orders across Rawalpindi:</p>
+          <a href="tel:03144108033" class="block font-heading font-black text-sm text-amber-400 hover:underline">
+            📞 For Assistance: 03144108033
+          </a>
+        </div>
+
+      </aside>
+
+      <!-- ============================================== -->
+      <!-- COMPACT FOOD ITEMS GRID AREA                   -->
+      <!-- ============================================== -->
+      <main class="flex-1 w-full space-y-12" id="menu-sections-container">
+        <!-- Modern Glowing Shimmer Loading Skeleton State (Pre-Render Placeholder) -->
+        <div class="menu-skeleton-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 items-stretch mb-12">
+          <div class="food-card bg-[#1b1b1b] border border-white/5 rounded-2xl overflow-hidden flex flex-col pointer-events-none p-0">
+            <div class="h-28 sm:h-32 w-full skeleton-shimmer bg-white/[0.04]"></div>
+            <div class="p-3 sm:p-3.5 flex-1 flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <div class="h-3.5 w-3/4 rounded-md skeleton-shimmer bg-white/[0.08]"></div>
+                <div class="h-2.5 w-full rounded skeleton-shimmer bg-white/[0.04]"></div>
+                <div class="h-2.5 w-4/5 rounded skeleton-shimmer bg-white/[0.04]"></div>
+              </div>
+              <div class="pt-2 border-t border-white/5 space-y-2">
+                <div class="flex justify-between items-center">
+                  <div class="h-2.5 w-8 rounded skeleton-shimmer bg-white/[0.04]"></div>
+                  <div class="h-3.5 w-16 rounded skeleton-shimmer bg-amber-500/20"></div>
+                </div>
+                <div class="h-8 w-full rounded-xl skeleton-shimmer bg-white/[0.05]"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-card bg-[#1b1b1b] border border-white/5 rounded-2xl overflow-hidden flex flex-col pointer-events-none p-0">
+            <div class="h-28 sm:h-32 w-full skeleton-shimmer bg-white/[0.04]"></div>
+            <div class="p-3 sm:p-3.5 flex-1 flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <div class="h-3.5 w-3/4 rounded-md skeleton-shimmer bg-white/[0.08]"></div>
+                <div class="h-2.5 w-full rounded skeleton-shimmer bg-white/[0.04]"></div>
+                <div class="h-2.5 w-4/5 rounded skeleton-shimmer bg-white/[0.04]"></div>
+              </div>
+              <div class="pt-2 border-t border-white/5 space-y-2">
+                <div class="flex justify-between items-center">
+                  <div class="h-2.5 w-8 rounded skeleton-shimmer bg-white/[0.04]"></div>
+                  <div class="h-3.5 w-16 rounded skeleton-shimmer bg-amber-500/20"></div>
+                </div>
+                <div class="h-8 w-full rounded-xl skeleton-shimmer bg-white/[0.05]"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-card bg-[#1b1b1b] border border-white/5 rounded-2xl overflow-hidden flex flex-col pointer-events-none p-0">
+            <div class="h-28 sm:h-32 w-full skeleton-shimmer bg-white/[0.04]"></div>
+            <div class="p-3 sm:p-3.5 flex-1 flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <div class="h-3.5 w-3/4 rounded-md skeleton-shimmer bg-white/[0.08]"></div>
+                <div class="h-2.5 w-full rounded skeleton-shimmer bg-white/[0.04]"></div>
+                <div class="h-2.5 w-4/5 rounded skeleton-shimmer bg-white/[0.04]"></div>
+              </div>
+              <div class="pt-2 border-t border-white/5 space-y-2">
+                <div class="flex justify-between items-center">
+                  <div class="h-2.5 w-8 rounded skeleton-shimmer bg-white/[0.04]"></div>
+                  <div class="h-3.5 w-16 rounded skeleton-shimmer bg-amber-500/20"></div>
+                </div>
+                <div class="h-8 w-full rounded-xl skeleton-shimmer bg-white/[0.05]"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-card bg-[#1b1b1b] border border-white/5 rounded-2xl overflow-hidden flex flex-col pointer-events-none p-0">
+            <div class="h-28 sm:h-32 w-full skeleton-shimmer bg-white/[0.04]"></div>
+            <div class="p-3 sm:p-3.5 flex-1 flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <div class="h-3.5 w-3/4 rounded-md skeleton-shimmer bg-white/[0.08]"></div>
+                <div class="h-2.5 w-full rounded skeleton-shimmer bg-white/[0.04]"></div>
+                <div class="h-2.5 w-4/5 rounded skeleton-shimmer bg-white/[0.04]"></div>
+              </div>
+              <div class="pt-2 border-t border-white/5 space-y-2">
+                <div class="flex justify-between items-center">
+                  <div class="h-2.5 w-8 rounded skeleton-shimmer bg-white/[0.04]"></div>
+                  <div class="h-3.5 w-16 rounded skeleton-shimmer bg-amber-500/20"></div>
+                </div>
+                <div class="h-8 w-full rounded-xl skeleton-shimmer bg-white/[0.05]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- INTERACTIVE OPTIONS SELECTION MODAL            -->
+  <!-- ============================================== -->
+  <div id="options-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-[#1e1e1e] border border-amber-500/30 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative animate-in fade-in zoom-in duration-200 flex flex-col max-h-[90vh]">
+      
+      <!-- Close Button -->
+      <button onclick="closeOptionsModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white p-2 rounded-xl hover:bg-white/5 transition-colors z-10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Modal Item Header -->
+      <div class="flex items-center gap-4 pb-4 border-b border-white/10 shrink-0">
+        <img id="modal-item-img" src="" alt="" class="w-16 h-16 rounded-2xl object-cover shrink-0 border border-white/10" />
+        <div class="min-w-0 flex-grow">
+          <h3 id="modal-item-name" class="font-heading font-black text-lg text-white truncate">Item Name</h3>
+          <p id="modal-item-desc" class="text-xs text-neutral-400 line-clamp-1">Description</p>
+          <span id="modal-item-base-price" class="text-sm font-heading font-bold text-amber-400">Rs. 0</span>
+        </div>
+      </div>
+
+      <!-- Modal Options Form (Scrollable) -->
+      <div id="modal-options-container" class="flex-grow overflow-y-auto py-4 space-y-5 pr-1 no-scrollbar text-xs">
+        <!-- Populated dynamically based on chosen item's options -->
+      </div>
+
+      <!-- Modal Footer (Quantity + Confirm Button) -->
+      <div class="pt-4 border-t border-white/10 shrink-0 flex items-center justify-between gap-4">
+        <!-- Quantity Selector -->
+        <div class="flex items-center gap-2 bg-[#252525] border border-white/10 rounded-xl px-2 py-1 shrink-0">
+          <button onclick="changeModalQty(-1)" class="w-7 h-7 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-sm flex items-center justify-center">-</button>
+          <span id="modal-qty" class="w-6 text-center font-bold text-white text-sm">1</span>
+          <button onclick="changeModalQty(1)" class="w-7 h-7 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-sm flex items-center justify-center">+</button>
+        </div>
+
+        <!-- Add to Cart CTA -->
+        <button onclick="confirmOptionsAddToCart()" class="flex-grow py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-heading font-black text-sm tracking-wide shadow-glow-amber transition-all flex items-center justify-center gap-2">
+          <span>Add to Cart</span>
+          <span id="modal-total-btn-price" class="font-bold">• Rs. 0</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MOBILE FLOATING CART BAR (1-Tap to cart.html)  -->
+  <!-- ============================================== -->
+  <div id="mobile-cart-bar" class="fixed bottom-4 left-4 right-4 z-40 lg:hidden hidden">
+    <a href="cart.html" class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500 text-black font-heading font-black text-sm shadow-2xl flex items-center justify-between transition-transform active:scale-[0.98]">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-black text-amber-400 flex items-center justify-center font-bold text-xs" id="mobile-cart-badge">0</div>
+        <span>View Cart</span>
+      </div>
+      <div class="flex items-center gap-1.5 font-bold">
+        <span id="mobile-cart-subtotal">Rs. 0</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-neutral-900 border border-amber-500/40 text-white px-4 py-2.5 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs font-semibold">
+    <span class="text-base">✅</span>
+    <span id="toast-msg">Added to Cart!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#101010] border-t border-white/5 py-8 text-neutral-400 text-xs mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-heading font-black text-white text-base">Mr. Cook</span>
+        <span class="text-amber-500">Pakistan</span>
+      </div>
+      <p>© 2026 Mr. Cook Fast Food Restaurant. All rights reserved. Pakistan.</p>
+      <a href="tel:03144108033" class="text-amber-400 font-bold hover:underline">📞 For Assistance: 03144108033</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./firebase-config.js"></script>
+  <script src="./menu-data.js"></script>
+  <script src="./advanced-interactions.js"></script>
+  <script src="./menu.js"></script>
+  <script src="./login-modal.js"></script>
+</body>
+</html>

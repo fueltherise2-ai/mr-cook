@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr. Cook | Fast Food & Legacy Flavors - Pakistan</title>
+  <meta name="description" content="Experience the authentic legacy of fast food at Mr. Cook. Juicy gourmet burgers, loaded pizzas, crispy broast, and fast delivery." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d97706'><path d='M18.06 22.99h-12.12c-1.6 0-2.92-1.28-2.94-2.88l-.48-11.45c-.02-.37.28-.66.65-.66h17.65c.37 0 .67.29.65.66l-.47 11.45c-.03 1.6-1.34 2.88-2.94 2.88zm-14.7-13.01l.43 10.15c.01.55.46.99 1.01.99h14.4c.55 0 1-.44 1.01-.99l.43-10.15H3.36zM12 2C8.69 2 6 4.69 6 8h12c0-3.31-2.69-6-6-6zm0 2c2.21 0 4 1.79 4 4H8c0-2.21 1.79-4 4-4z'/></svg>" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            charcoal: {
+              DEFAULT: '#1a1a1a',
+              deep: '#121212',
+              card: '#222222',
+              surface: '#2a2a2a',
+              border: '#333333'
+            },
+            amber: {
+              accent: '#d97706',
+              glow: '#f59e0b',
+              light: '#fbbf24',
+              flame: '#ea580c'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-amber': '0 0 25px -3px rgba(217, 119, 6, 0.45)',
+            'glow-amber-lg': '0 0 45px -5px rgba(217, 119, 6, 0.6)',
+            'card-dark': '0 10px 30px -10px rgba(0, 0, 0, 0.7)'
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+              '50%': { opacity: '0.7', transform: 'scale(1.05)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./brand-theme.js"></script>
+</head>
+<body class="bg-[#121212] text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen flex flex-col">
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-orange-600 text-black text-xs sm:text-sm font-semibold py-1.5 px-4 text-center tracking-wide flex items-center justify-center gap-2 relative z-50 entry-banner">
+    <span class="inline-block animate-bounce">🔥</span>
+    <span>Free Delivery across Rawalpindi on orders over Rs. 1,500! For Assistance: <a href="tel:03144108033" class="underline font-bold hover:text-white transition-colors">03144108033</a></span>
+  </div>
+
+  <!-- NAVIGATION BAR (HEADER) -->
+  <header id="main-header" class="sticky top-0 z-40 bg-[#1a1a1a]/90 backdrop-blur-md border-b border-white/5 transition-all duration-300 entry-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo on the left (Click triggers Staff Login Selection Modal) -->
+      <a href="#home" onclick="openLoginSelectionModal(event)" class="header-logo-trigger flex items-center gap-3 group cursor-pointer" title="Mr. Cook Portal Login">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/40 group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+          <div class="w-full h-full bg-[#1a1a1a] rounded-[14px] flex items-center justify-center">
+            <!-- Fast-Food / Chef Burger Icon -->
+            <svg class="w-6 h-6 text-amber-500 group-hover:text-amber-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+              <line x1="6" y1="17" x2="18" y2="17"/>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-heading font-black text-2xl tracking-tight text-white group-hover:text-amber-400 transition-colors">
+              Mr. Cook
+            </span>
+            <span class="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          </div>
+          <!-- LOCATION TAG: Updated to 'Pakistan' -->
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-500/90 -mt-1">
+            Pakistan
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links on the right -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#home" class="nav-link text-white/90 hover:text-amber-400 transition-colors py-1 relative active">
+          Home
+        </a>
+        <a href="#about" class="nav-link text-neutral-300 hover:text-amber-400 transition-colors py-1 relative">
+          About Us
+        </a>
+        <a href="menu.html" class="nav-link text-neutral-300 hover:text-amber-400 transition-colors py-1 relative">
+          Explore Menu
+        </a>
+        <a href="#contact" class="nav-link text-neutral-300 hover:text-amber-400 transition-colors py-1 relative">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Prominent CTA Button on the extreme right & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Phone Link -->
+        <a href="tel:03144108033" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full bg-neutral-800 hover:bg-neutral-700 text-xs font-heading font-bold text-neutral-200 border border-white/10 hover:border-amber-500/50 transition-all">
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>For Assistance: 03144108033</span>
+        </a>
+
+        <!-- Order Now CTA (Navigates directly to menu.html) -->
+        <a href="menu.html" class="relative group overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-[#1a1a1a] cta-breathing-pulse">
+          <span class="absolute inset-0 bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500 rounded-full transition-all duration-300 group-hover:opacity-90"></span>
+          <span class="relative flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1a1a1a] group-hover:bg-transparent text-white font-heading font-bold text-sm tracking-wide transition-all duration-300">
+            <svg class="w-4 h-4 text-amber-400 group-hover:text-black transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"/>
+              <circle cx="19" cy="21" r="1"/>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+            </svg>
+            <span class="group-hover:text-black transition-colors">Order Now</span>
+          </span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-xl text-neutral-300 hover:text-white hover:bg-white/5 focus:outline-none">
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#181818] border-b border-white/10 px-6 py-6 space-y-4">
+      <a href="#home" class="mobile-nav-link block text-lg font-medium text-amber-400 py-2 border-b border-white/5">Home</a>
+      <a href="#about" class="mobile-nav-link block text-lg font-medium text-neutral-200 hover:text-amber-400 py-2 border-b border-white/5">About Us</a>
+      <a href="menu.html" class="mobile-nav-link block text-lg font-medium text-neutral-200 hover:text-amber-400 py-2 border-b border-white/5">Explore Menu</a>
+      <a href="#contact" class="mobile-nav-link block text-lg font-medium text-neutral-200 hover:text-amber-400 py-2">Contact</a>
+      <div class="pt-2 space-y-2">
+        <a href="menu.html" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-black font-heading font-extrabold rounded-xl shadow-lg shadow-amber-500/20 text-center flex items-center justify-center gap-2">
+          <span>⚡ Order Now (Main Menu)</span>
+        </a>
+        <a href="tel:03144108033" class="w-full py-2.5 bg-neutral-800/80 hover:bg-neutral-700 text-neutral-200 font-heading font-bold text-xs rounded-xl border border-white/10 text-center flex items-center justify-center gap-2">
+          <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>For Assistance: 03144108033</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- ============================================== -->
+    <!-- HERO SECTION (First View)                     -->
+    <!-- ============================================== -->
+    <section id="home" class="relative min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-[#161616] py-16 lg:py-24">
+      
+      <!-- Floating Ambient Glowing Spheres & Abstract Food Shapes -->
+      <div id="hero-parallax-container" class="cinematic-glow-layer absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <!-- Glowing Ambient Spheres -->
+        <div class="parallax-layer absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-amber-500/15 blur-[120px] animate-float-orb-1" data-depth="0.04"></div>
+        <div class="parallax-layer absolute bottom-8 right-12 w-[450px] h-[450px] rounded-full bg-orange-600/12 blur-[130px] animate-float-orb-2" data-depth="-0.05"></div>
+        <div class="parallax-layer absolute top-20 left-8 w-72 h-72 rounded-full bg-amber-600/10 blur-[100px] animate-float-orb-3" data-depth="0.03"></div>
+
+        <!-- Floating Abstract Food Badges & Accents with Frosted Glass -->
+        <div class="parallax-layer absolute top-16 left-6 sm:left-14 p-2.5 sm:p-3 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl animate-float-badge-1 hidden md:flex items-center gap-2" data-depth="0.06">
+          <span class="text-xl sm:text-2xl filter drop-shadow">🍔</span>
+          <span class="text-[10px] font-heading font-bold text-amber-300 uppercase tracking-widest hidden lg:inline">Smash Patty</span>
+        </div>
+        <div class="parallax-layer absolute bottom-28 left-1/4 p-2.5 sm:p-3 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl animate-float-badge-2 hidden lg:flex items-center gap-2" data-depth="-0.04">
+          <span class="text-xl sm:text-2xl filter drop-shadow">🍕</span>
+          <span class="text-[10px] font-heading font-bold text-orange-300 uppercase tracking-widest hidden xl:inline">Stone-Baked</span>
+        </div>
+        <div class="parallax-layer absolute top-24 right-16 sm:right-28 p-2.5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl animate-float-badge-3 hidden md:flex items-center gap-2" data-depth="0.05">
+          <span class="text-lg filter drop-shadow">⚡</span>
+          <span class="text-[10px] font-heading font-bold text-amber-400 uppercase tracking-widest hidden lg:inline">25 Min Express</span>
+        </div>
+        <div class="parallax-layer absolute bottom-16 right-10 p-2.5 sm:p-3 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-2xl animate-float-badge-1 hidden lg:flex items-center gap-2" data-depth="-0.035">
+          <span class="text-xl sm:text-2xl filter drop-shadow">🍟</span>
+          <span class="text-[10px] font-heading font-bold text-amber-300 uppercase tracking-widest hidden xl:inline">Masala Fries</span>
+        </div>
+
+        <!-- Glowing Star Particles -->
+        <div class="parallax-layer absolute top-10 right-1/3 text-amber-400/50 text-sm animate-pulse-particle" data-depth="0.08">✦</div>
+        <div class="parallax-layer absolute bottom-36 left-12 text-orange-400/40 text-xs animate-pulse-particle" style="animation-delay: 1.5s;" data-depth="-0.06">✧</div>
+      </div>
+      
+      <!-- Subtle Textured Grid Overlay -->
+      <div class="absolute inset-0 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:32px_32px] opacity-5 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- LEFT COLUMN: Headline, Subtext & CTA Button -->
+          <div class="lg:col-span-7 text-center lg:text-left space-y-7">
+            
+            <!-- Location & Legacy Badge -->
+            <div class="cinematic-kicker inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-amber-500/30 backdrop-blur-md shadow-inner text-amber-400 text-xs sm:text-sm font-semibold tracking-wide">
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+              </span>
+              <span class="font-heading font-extrabold uppercase tracking-wider">WHEN THE CRAVING HITS</span>
+              <span class="text-neutral-500">•</span>
+              <span class="text-neutral-300 font-medium hidden sm:inline">Westridge III Since 2016</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="cinematic-headline font-heading font-black text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white leading-[1.08]">
+              WHEN THE CRAVING HITS: <br class="hidden sm:inline" />
+              Taste the <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 drop-shadow-sm">Legacy</span> of Rawalpindi!
+            </h1>
+
+            <!-- Subtext -->
+            <p class="cinematic-subtext text-xl sm:text-2xl font-semibold text-amber-200/90 tracking-wide font-heading">
+              Authentic flavors, fast service, family joy.
+            </p>
+
+            <!-- Supporting Descriptive Copy -->
+            <p class="cinematic-description text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              Crafted fresh on Peshawar Road. From our sizzling double smash beef patties and spicy crispy broast to loaded cheesy pizzas, we bring Rawalpindi unforgettable fast-food moments served straight from the grill.
+            </p>
+
+            <!-- CTA ACTION BUTTONS: Explore Menu & Order Now with Post-Entrance Breathing Glow -->
+            <div class="cinematic-actions flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+              
+              <!-- Primary CTA Button 1: EXPLORE MENU (Navigates directly to main menu.html) -->
+              <a href="menu.html" id="explore-menu-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 hover:from-amber-400 hover:via-amber-500 hover:to-orange-500 text-black font-heading font-black text-base sm:text-lg tracking-wider uppercase shadow-glow-amber hover:shadow-glow-amber-lg hover:-translate-y-1 active:translate-y-0 transition-all duration-300 group cta-breathing-pulse">
+                <span>EXPLORE MENU</span>
+                <svg class="w-5 h-5 text-black transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+
+              <!-- Primary CTA Button 2: ORDER NOW (Navigates directly to menu.html) -->
+              <a href="menu.html" id="hero-order-now-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-neutral-900/90 hover:bg-neutral-800 text-amber-400 border border-amber-500/50 hover:border-amber-400 font-heading font-black text-base sm:text-lg tracking-wider uppercase hover:-translate-y-1 active:translate-y-0 transition-all duration-300 group cta-breathing-pulse-alt">
+                <svg class="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8" cy="21" r="1"/>
+                  <circle cx="19" cy="21" r="1"/>
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                </svg>
+                <span>ORDER NOW</span>
+              </a>
+
+              <!-- Secondary Call CTA Button (03144108033) -->
+              <a href="tel:03144108033" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-2xl bg-neutral-900/80 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-700/80 hover:border-amber-500/50 font-heading font-bold text-xs sm:text-sm tracking-wide hover:-translate-y-0.5 transition-all duration-300 cta-secondary-pulse">
+                <svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>03144108033</span>
+              </a>
+            </div>
+
+            <!-- Social Proof Highlights -->
+            <div class="cinematic-social-proof pt-4 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 text-neutral-300 text-sm">
+              <div class="flex items-center gap-2">
+                <div class="flex text-amber-400">
+                  ★★★★★
+                </div>
+                <span class="font-bold text-white">4.9 / 5</span>
+                <span class="text-neutral-400">(1,200+ Reviews)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-amber-500 font-bold">⚡ 25 Min</span>
+                <span class="text-neutral-400">Average Delivery Time</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-amber-500">🛡️</span>
+                <span class="text-neutral-400">100% Halal Guarantee</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Premium Visual Composition of Burgers, Fries & Pizza (Fixed Local Images) -->
+          <div class="lg:col-span-5 relative flex justify-center entry-hero-visual">
+            
+            <!-- Glowing Backlight behind visual -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-600/30 via-orange-600/20 to-transparent rounded-3xl blur-2xl -z-10"></div>
+
+            <div class="relative w-full max-w-md lg:max-w-none">
+              
+              <!-- Main Hero Food Image Card (Juicy Gourmet Burger & Fries with Spring Drop-In) -->
+              <div class="cinematic-product-visual relative rounded-3xl overflow-hidden border border-white/10 bg-[#1f1f1f] shadow-card-dark group hover-elevate-card">
+                <img 
+                  src="./images/burger.jpg" 
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80'"
+                  alt="Mr. Cook Signature Gourmet Burger with melted cheese" 
+                  class="w-full h-[380px] sm:h-[420px] object-cover object-center card-zoom-img"
+                  loading="eager"
+                />
+                
+                <!-- Dark Gradient Vignette for text readability -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+
+                <!-- Card Bottom Overlay -->
+                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
+                  <div>
+                    <span class="inline-block px-2.5 py-1 rounded-md bg-amber-500 text-black font-extrabold text-[11px] uppercase tracking-wider mb-1">
+                      Chef's Special
+                    </span>
+                    <h3 class="font-heading font-bold text-xl text-white">The Westridge Double Smash</h3>
+                    <p class="text-xs text-neutral-300">Dual beef patties, melted sharp cheddar, caramelized onions</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="block text-xs text-amber-400 uppercase font-semibold">Only</span>
+                    <span class="font-heading font-black text-2xl text-white">Rs. 850</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Food Visual 1: Cheesy Pizza Slice (Top Right Spring Pop) -->
+              <div class="cinematic-satellite-1 absolute -top-6 -right-6 sm:-right-8 w-36 sm:w-44 bg-[#1f1f1f]/95 border border-amber-500/30 rounded-2xl p-2.5 shadow-2xl backdrop-blur-md animate-float-slow hidden sm:flex items-center gap-3">
+                <img 
+                  src="./images/pizza.jpg" 
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=240&q=80'"
+                  alt="Cheesy Stone-baked Pizza" 
+                  class="w-12 h-12 rounded-xl object-cover"
+                />
+                <div class="leading-tight">
+                  <span class="block text-xs font-bold text-white font-heading">Stone-Baked Pizza</span>
+                  <span class="text-[10px] text-amber-400 font-semibold">100% Mozzarella</span>
+                </div>
+              </div>
+
+              <!-- Floating Food Visual 2: Crispy Seasoned Fries Badge (Bottom Left Spring Pop) -->
+              <div class="cinematic-satellite-2 absolute -bottom-6 -left-6 sm:-left-8 w-44 sm:w-48 bg-[#1f1f1f]/95 border border-amber-500/30 rounded-2xl p-2.5 shadow-2xl backdrop-blur-md hidden sm:flex items-center gap-3">
+                <img 
+                  src="./images/fries.jpg" 
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=240&q=80'"
+                  alt="Golden Crispy Fries" 
+                  class="w-12 h-12 rounded-xl object-cover"
+                />
+                <div class="leading-tight">
+                  <span class="block text-xs font-bold text-white font-heading">Crispy Seasoned Fries</span>
+                  <span class="text-[10px] text-amber-400 font-semibold">Pindi Masala Dusted</span>
+                </div>
+              </div>
+
+              <!-- Decorative Badge: Hot & Fresh Guarantee -->
+              <div class="cinematic-satellite-badge absolute -top-4 left-6 bg-gradient-to-r from-orange-600 to-amber-600 text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+                <span>🔥</span>
+                <span class="tracking-wider uppercase">Served Sizzling Hot</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ABOUT SECTION (Right below Hero)              -->
+    <!-- ============================================== -->
+    <section id="about" class="py-20 bg-[#1a1a1a] border-t border-b border-white/5 relative">
+      <!-- Glow ambient -->
+      <div class="absolute left-1/2 -top-24 -translate-x-1/2 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Center Header Tag -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-amber-500 font-heading font-extrabold text-sm tracking-widest uppercase inline-block mb-2">
+            Taste Crafted With Passion
+          </span>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-white tracking-tight">
+            The Mr. Cook Story in Westridge
+          </h2>
+        </div>
+
+        <!-- The Short, Clean Overview Card titled "Our Story" -->
+        <div class="max-w-4xl mx-auto bg-[#222222] border border-amber-500/25 rounded-3xl p-8 sm:p-12 shadow-card-dark relative overflow-hidden group hover:border-amber-500/40 transition-all duration-300 hover-elevate-card">
+          
+          <!-- Decorative Amber Glow Line at top of card -->
+          <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Icon / Visual Badge -->
+            <div class="md:col-span-4 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-black/40 border border-white/5">
+              <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl mb-3 shadow-inner">
+                👨‍🍳
+              </div>
+              <h4 class="font-heading font-bold text-white text-lg">Westridge III</h4>
+              <p class="text-amber-400 text-xs font-semibold uppercase tracking-wider">Since 2016</p>
+              <div class="mt-3 text-xs text-neutral-400">Peshawar Road, Rawalpindi</div>
+            </div>
+
+            <!-- Right Text Content -->
+            <div class="md:col-span-8 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                About Section
+              </div>
+              
+              <h3 class="font-heading font-black text-2xl sm:text-3xl text-white">
+                Our Story
+              </h3>
+              
+              <!-- KEY REQUIREMENT QUOTE -->
+              <p class="text-lg sm:text-xl font-medium text-amber-200/90 leading-relaxed italic">
+                “Serving the best fast food and traditional flavors in Westridge since 2016. Quality is our promise.”
+              </p>
+
+              <!-- Extended details on local quality & dedication -->
+              <p class="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                Founded in the heart of Westridge III, Mr. Cook began with a single mission: to craft gourmet fast-food that matches the bold, hearty appetite of Rawalpindi. We never freeze our patties, we grind our secret spices right here in the twin cities, and every burger, pizza, and loaded fry basket is made-to-order with authentic hospitality.
+              </p>
+
+              <!-- 3 Core Promises -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <span class="block text-amber-400 text-base mb-1">🍔</span>
+                  <span class="block text-xs font-bold text-white">Fresh Brioche Buns</span>
+                  <span class="text-[11px] text-neutral-400">Baked daily</span>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <span class="block text-amber-400 text-base mb-1">🔥</span>
+                  <span class="block text-xs font-bold text-white">Pindi Secret Sauces</span>
+                  <span class="text-[11px] text-neutral-400">Signature blend</span>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                  <span class="block text-amber-400 text-base mb-1">⚡</span>
+                  <span class="block text-xs font-bold text-white">Express Delivery</span>
+                  <span class="text-[11px] text-neutral-400">Westridge & Cantt</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- CONTACT & LOCATION SECTION                     -->
+    <!-- ============================================== -->
+    <section id="contact" class="py-20 bg-[#171717] border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-amber-500 font-heading font-extrabold text-sm tracking-widest uppercase inline-block mb-2">
+            Visit & Connect
+          </span>
+          <h2 class="font-heading font-black text-3xl sm:text-4xl text-white tracking-tight">
+            Find Us in Westridge III, Rawalpindi
+          </h2>
+          <p class="text-neutral-400 text-sm sm:text-base mt-2">
+            Dine in with family, pick up on the go, or get lightning-fast delivery to your doorstep.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Location & Directions -->
+          <div class="bg-[#202020] border border-white/10 rounded-3xl p-8 hover:border-amber-500/30 transition-all flex flex-col justify-between hover-elevate-card">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-6">
+                📍
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2">Our Location</h3>
+              <p class="text-neutral-300 text-sm leading-relaxed mb-4">
+                Main Market, Sector Westridge III, Peshawar Road, Rawalpindi Cantt, Punjab, Pakistan.
+              </p>
+              <div class="inline-block px-3 py-1 bg-white/5 text-amber-400 text-xs font-semibold rounded-lg">
+                Near Westridge Post Office
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/5">
+              <a href="https://maps.google.com/?q=Westridge+3+Rawalpindi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-heading font-bold text-amber-400 hover:text-amber-300">
+                <span>Open in Google Maps</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Operating Hours -->
+          <div class="bg-[#202020] border border-white/10 rounded-3xl p-8 hover:border-amber-500/30 transition-all flex flex-col justify-between hover-elevate-card">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-6">
+                ⏰
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2">Opening Hours</h3>
+              <ul class="space-y-3 text-sm text-neutral-300">
+                <li class="flex justify-between py-1 border-b border-white/5">
+                  <span>Monday - Thursday:</span>
+                  <span class="font-semibold text-white">12:00 PM – 1:30 AM</span>
+                </li>
+                <li class="flex justify-between py-1 border-b border-white/5">
+                  <span>Friday:</span>
+                  <span class="font-semibold text-white">2:00 PM – 2:30 AM</span>
+                </li>
+                <li class="flex justify-between py-1">
+                  <span>Saturday - Sunday:</span>
+                  <span class="font-semibold text-amber-400">12:00 PM – 3:00 AM</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-neutral-400">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+              <span>Open now for Dine-in & Midnight Deliveries</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Call & WhatsApp Orders -->
+          <div class="bg-gradient-to-br from-[#242424] to-[#1c1c1c] border border-amber-500/30 rounded-3xl p-8 shadow-card-dark flex flex-col justify-between relative overflow-hidden hover-elevate-card">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-500 text-black flex items-center justify-center text-xl font-black mb-6">
+                📞
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2">Direct Phone & WhatsApp</h3>
+              <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+                Craving food right now? Call our counter or send your order on WhatsApp for priority kitchen queue.
+              </p>
+              <div class="space-y-2">
+                <a href="tel:03144108033" class="block font-heading font-black text-2xl text-white hover:text-amber-400 transition-colors">
+                  03144108033
+                </a>
+                <p class="text-xs text-neutral-400">Direct Call & WhatsApp</p>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10">
+              <button onclick="openOrderModal()" class="w-full py-3 bg-amber-500 hover:bg-amber-400 text-black font-heading font-extrabold rounded-xl text-center shadow-lg shadow-amber-500/25 transition-all">
+                Send WhatsApp Order
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- FOOTER                                         -->
+  <!-- ============================================== -->
+  <footer class="bg-[#101010] border-t border-white/5 py-12 text-neutral-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
+        
+        <!-- Brand on Left -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center text-black font-black text-lg">
+            🍔
+          </div>
+          <div>
+            <span class="font-heading font-black text-lg text-white block">Mr. Cook</span>
+            <span class="text-xs text-amber-500">Pakistan</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
+          <a href="#home" class="hover:text-amber-400 transition-colors">Home</a>
+          <a href="#about" class="hover:text-amber-400 transition-colors">Our Story</a>
+          <a href="menu.html" class="hover:text-amber-400 transition-colors text-amber-400 font-semibold">Explore Menu</a>
+          <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+        </div>
+
+        <!-- Delivery Areas Tag -->
+        <div class="text-xs text-neutral-400 text-center md:text-right">
+          Delivering to Westridge, Peshawar Rd & Rawalpindi Cantt
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <p>© 2026 Mr. Cook Fast Food Restaurant. All rights reserved. Pakistan.</p>
+        <p class="text-amber-500 font-medium">Quality is our promise.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- ORDER NOW MODAL / DRAWER                       -->
+  <!-- ============================================== -->
+  <div id="order-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-[#1f1f1f] border border-amber-500/30 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      
+      <!-- Close Button -->
+      <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-neutral-400 hover:text-white p-2 rounded-xl hover:bg-white/5 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
+          🍔
+        </div>
+        <div>
+          <h3 class="font-heading font-black text-2xl text-white">Order From Mr. Cook</h3>
+          <p class="text-xs text-neutral-400">Fresh Kitchen Direct Order</p>
+        </div>
+      </div>
+
+      <form id="quick-order-form" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+        <!-- Item Selection -->
+        <div>
+          <label class="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-1.5">Select Food Item</label>
+          <select id="item-select" onchange="handleItemSelect(this)" class="w-full px-4 py-2.5 rounded-xl bg-[#282828] border border-white/10 text-white text-sm focus:outline-none focus:border-amber-500">
+            <option value="The Westridge Double Smash" data-price="850">The Westridge Double Smash - Rs. 850</option>
+            <option value="Westridge Zinger Supreme" data-price="690">Westridge Zinger Supreme - Rs. 690</option>
+            <option value="Pindi Special Tikka Pizza" data-price="1290">Pindi Special Tikka Pizza - Rs. 1,290</option>
+            <option value="Golden Crispy Broast (Quarter)" data-price="620">Golden Crispy Broast (Quarter) - Rs. 620</option>
+            <option value="Loaded Pizza-Fries" data-price="590">Loaded Pizza-Fries - Rs. 590</option>
+            <option value="Pepperoni Craze Pizza" data-price="1350">Pepperoni Craze Pizza - Rs. 1,350</option>
+          </select>
+        </div>
+
+        <!-- Quick Summary Box -->
+        <div id="cart-summary" class="p-3 rounded-2xl bg-black/40 border border-white/5 text-xs">
+          <div class="flex justify-between items-center text-neutral-300 mb-1">
+            <span class="font-bold text-white">Selected Item:</span>
+            <span id="selected-item-name" class="text-amber-400 font-semibold">The Westridge Double Smash</span>
+          </div>
+          <div class="flex justify-between items-center text-neutral-400">
+            <span>Estimated Price:</span>
+            <span id="selected-item-price" class="text-white font-bold">Rs. 850</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-1.5">Your Name</label>
+          <input type="text" id="cust-name" required placeholder="e.g. Hamza Khan" class="w-full px-4 py-2.5 rounded-xl bg-[#282828] border border-white/10 text-white placeholder-neutral-400 text-sm focus:outline-none focus:border-amber-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-1.5">Delivery Address / Dine-in</label>
+          <input type="text" id="cust-address" required placeholder="e.g. Street 4, Sector Westridge III" class="w-full px-4 py-2.5 rounded-xl bg-[#282828] border border-white/10 text-white placeholder-neutral-400 text-sm focus:outline-none focus:border-amber-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-1.5">Special Instructions (Sauces, Drinks)</label>
+          <textarea id="cust-notes" rows="2" placeholder="e.g. Extra spicy garlic sauce, no onions please" class="w-full px-4 py-2 rounded-xl bg-[#282828] border border-white/10 text-white placeholder-neutral-400 text-sm focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-heading font-black text-base shadow-glow-amber transition-all">
+          Place Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-neutral-900 border border-amber-500/40 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+    <span class="text-xl">✅</span>
+    <span id="toast-msg" class="text-sm font-medium">Added to order!</span>
+  </div>
+
+  <!-- Firebase Backend & Analytics -->
+  <script type="module" src="./firebase-config.js"></script>
+  <script src="./advanced-interactions.js"></script>
+  <script src="./script.js"></script>
+  <script src="./login-modal.js"></script>
+</body>
+</html>

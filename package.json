@@ -1,0 +1,21 @@
+{
+  "name": "mr-cook-fast-food",
+  "version": "1.0.0",
+  "description": "Modern responsive landing page for Mr. Cook Fast Food Restaurant in Westridge III, Rawalpindi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "fast-food",
+    "restaurant",
+    "landing-page",
+    "rawalpindi",
+    "tailwind-css"
+  ],
+  "author": "Mr. Cook",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^13.2.0"
+  }
+}
